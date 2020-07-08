@@ -1,0 +1,13 @@
+{% extends 'useractivity/base.html' %}
+
+{% block body %}
+<h1>User_Name: {{ user.user_name }}</h1>
+<h2>User_id: {{ user.user_id }}</h1>
+    <ul>
+        {% for activity in user.activityperiod_set.all %}
+        <li>Login: {{ activity.start_time }}</li>
+        <li>Logout: {{ activity.end_time }}</li>
+        <br>
+        {% endfor %}
+    </ul>
+    {% endblock %}
